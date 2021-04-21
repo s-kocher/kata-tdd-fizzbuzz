@@ -24,4 +24,13 @@ public class FizzBuzzTest {
         assertEquals("2", result);
     }
 
+    @Test
+    public void should_return_Fizz_for_number_3() {
+        int input = 3;
+
+        String result = FizzBuzz.getValue(input);
+
+        assertEquals("Fizz", result);
+    }
+
 }
