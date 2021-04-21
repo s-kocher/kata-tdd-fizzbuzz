@@ -15,4 +15,13 @@ public class FizzBuzzTest {
         assertEquals("1", result);
     }
 
+    @Test
+    public void should_return_2_for_number_2() {
+        int input = 2;
+
+        String result = FizzBuzz.getValue(input);
+
+        assertEquals("2", result);
+    }
+
 }
