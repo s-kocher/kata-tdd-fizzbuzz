@@ -2,24 +2,41 @@ package fr.arolla.skocher.fizzbuzz;
 
 public class FizzBuzz {
 
-    public static final String FIZZ = "Fizz";
-    public static final String BUZZ = "Buzz";
-    public static final String FIZZ_BUZZ = "FizzBuzz";
+    private enum FizzBuzzValue {
+        FizzBuzz(15, "FizzBuzz"),
+        Fizz(3, "Fizz"),
+        Buzz(5, "Buzz");
+
+        int divider;
+        String label;
+
+        FizzBuzzValue(int divider, String label) {
+            this.divider = divider;
+            this.label = label;
+        }
+
+        private boolean isDivisableBy(int input) {
+            return input % divider == 0;
+        }
+    }
 
     public static String getValue(int input) {
-        if (isDivisableBy(input, 15)) {
-            return FIZZ_BUZZ;
+        FizzBuzzValue specialValue = isInputSpecialValue(input);
+        if (specialValue != null) {
+            return specialValue.label;
         }
-        if (isDivisableBy(input, 3)) {
-            return FIZZ;
-        }
-        if (isDivisableBy(input, 5)) {
-            return BUZZ;
-        }
+
         return Integer.toString(input);
     }
 
-    private static boolean isDivisableBy(int input, int divider) {
-        return input % divider == 0;
+    private static FizzBuzzValue isInputSpecialValue(int input) {
+        for (FizzBuzzValue value : FizzBuzzValue.values()) {
+            if (value.isDivisableBy(input)) {
+                return value;
+            }
+        }
+        return null;
     }
+
+
 }
