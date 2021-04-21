@@ -8,6 +8,9 @@ public class FizzBuzz {
         if (input % 3 == 0) {
             return FIZZ;
         }
+        if (input == 5) {
+            return "Buzz";
+        }
         return Integer.toString(input);
     }
 }
