@@ -60,4 +60,13 @@ public class FizzBuzzTest {
         assertEquals("Buzz", result);
     }
 
+    @Test
+    public void should_return_FizzBuzz_for_number_15() {
+        int input = 15;
+
+        String result = FizzBuzz.getValue(input);
+
+        assertEquals("FizzBuzz", result);
+    }
+
 }

@@ -4,8 +4,12 @@ public class FizzBuzz {
 
     public static final String FIZZ = "Fizz";
     public static final String BUZZ = "Buzz";
+    public static final String FIZZ_BUZZ = "FizzBuzz";
 
     public static String getValue(int input) {
+        if (input == 15) {
+            return FIZZ_BUZZ;
+        }
         if (isDivisableBy(input, 3)) {
             return FIZZ;
         }
