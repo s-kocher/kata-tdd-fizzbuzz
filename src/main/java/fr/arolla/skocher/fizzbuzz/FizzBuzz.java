@@ -7,7 +7,7 @@ public class FizzBuzz {
     public static final String FIZZ_BUZZ = "FizzBuzz";
 
     public static String getValue(int input) {
-        if (input == 15) {
+        if (isDivisableBy(input, 15)) {
             return FIZZ_BUZZ;
         }
         if (isDivisableBy(input, 3)) {
